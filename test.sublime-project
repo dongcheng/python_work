@@ -1,0 +1,15 @@
+{
+ "folders":
+ [
+  {
+   "path": "."
+  }
+ ],
+ "virtualenv": "/Users/cheng/.virtualenvs/py3log",
+ "build_systems": [
+  {
+   "name": "Py3log",
+   "shell_cmd": "/Users/cheng/.virtualenvs/py3log/bin/python3 $file"
+  }
+ ] 
+}
