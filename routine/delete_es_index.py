@@ -1,11 +1,10 @@
 import requests
 
-for i in range(1970,2013):
-    requests.delete('http://10.100.10.129:9200/apilog-'+str(i)+'.*')
-    print(i)
+#error data not betweent 2013 ~ 2017
+years =  list(range(1970,2013)) +  list(range(2018,2039))
 
-for i in range(2018,2039):
-    requests.delete('http://10.100.10.129:9200/apilog-'+str(i)+'.*')
-    print(i)
+for year in years:
+    requests.delete('http://10.100.10.129:9200/apilog-'+str(year)+'.*')
+    print(year)
 
 print('ok')
