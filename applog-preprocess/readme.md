@@ -60,23 +60,22 @@
 ####4.1.4 日志输出
 > 说明：将日志输出到redis、文件、flume等
 
-<script type="json">
- { "app_key", "channel_id", "channel_num",
-"channel_title", "client_code", "client_ver", "ctime",
-"destation", "device_model", "device_os", "device_product",
-"device_size", "endtime", "event_name", "geoip_area_code",
-"geoip_city_name", "geoip_continent_code",
-"geoip_country_code2", "geoip_country_code3",
-"geoip_country_name", "geoip_dma_code", "geoip_ip",
-"geoip_latitude", "geoip_location", "geoip_longitude",
-"geoip_postal_code", "geoip_real_region_name",
-"geoip_region_name", "geoip_timezone", "identifier", "ip",
-"isoCC", "isoCe", "latitude", "longitude", "MCC", "message",
-"MNC", "network_state", "news_id", "news_title", "platform",
-"source", "sp", "startup", "state", "tags", "type", "udid",
-"user_id", "user_name", "user_type", "visit_id",
-"visit_start_time", "deal_date" };
-</script>
+输出文件字段的顺序：
+
+```js
+	"app_key", "channel_id", "channel_num", "channel_title", "client_code", 
+	"client_ver", "ctime", "destation", "device_model", "device_os", 
+	"device_product", "device_size", "endtime", "event_name", 
+	"geoip_area_code", "geoip_city_name", "geoip_continent_code", 
+	"geoip_country_code2", "geoip_country_code3", "geoip_country_name", 
+	"geoip_dma_code", "geoip_ip", "geoip_latitude", "geoip_location", 
+	"geoip_longitude", "geoip_postal_code", "geoip_real_region_name", 
+	"geoip_region_name", "geoip_timezone", "identifier", "ip",
+	"isoCC", "isoCe", "latitude", "longitude", "MCC", "message", "MNC", 
+	"network_state", "news_id", "news_title", "platform", "source", "sp", 
+	"startup", "state", "tags", "type", "udid", "user_id", "user_name", 
+	"user_type", "visit_id", "visit_start_time", "deal_date"
+```
 
 ###4.2 上传odps
 ###4.3 当日数据计算
