@@ -30,10 +30,10 @@ while  flag:
 	for x in logs:
 		try:
 			data = json.loads(x.decode('utf-8'))
-			with open('/home/cheng/adlog6.txt', 'a') as f:
+			with open('/home/cheng/adlog7.txt', 'a') as f:
 				for key in keys:
 					if(key == 'ctime'):
-						timearray = time.localtime(int(data.get(key)))
+						timearray = time.localtime(int(data.get(key))/1000)
 						f.write(time.strftime("%Y-%m-%d %H:%M:%S", timearray))
 					else:
 						f.write(str(data.get(key)))
