@@ -8,6 +8,11 @@ import re
 ZHP_SERVER = 'http://10.100.10.124:8080/PeopleWebClient/index/getAllContent.do'
 OUT_FILE = '/Users/cheng/Documents/paper201604.txt'
 SELECT_SQL = "SELECT * FROM TempUrlNewsPapers201604 where pubtime >= '2016-03-25 00:00:00.000' and pubtime < '2016-04-01 00:00:00.000'"
+DB_SERVER='10.100.6.123'
+DB_USERNAME='sa'
+DB_PWD='jinzhao#EDC'
+DB_DATABASE='paperSpiderBak'
+PROVINCE='江西'
 
 #去除html标签
 def removeHtml(text):
@@ -53,11 +58,11 @@ def writeFile(text):
 			f.write(text)
 			f.write("\t\n")
 	except ValueError as e:
-		print("error")
+		print("write file error")
 
 #主程序
 def run():
-    conn = pymssql.connect('10.100.6.123', 'sa', 'jinzhao#EDC', 'paperSpiderBak')
+    conn = pymssql.connect(DB_SERVER, DB_USERNAME, DB_PWD, DB_DATABASE)
     cursor = conn.cursor()
     cursor.execute(SELECT_SQL)
 
@@ -73,7 +78,7 @@ def run():
 	    	r = zhp(dd)
 	    	if(r is not None and r.text.strip() != ''):
 		    	data = eval(r.text)
-		    	if('江西' in data[1] or '江西' in data[7]): 
+		    	if(PROVINCE in data[1] or PROVINCE in data[7]): 
 			    	out = joinData(row, data)
 	    			writeFile(out)
 		    		count=count+1
