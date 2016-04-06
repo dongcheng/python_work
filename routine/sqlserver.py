@@ -73,9 +73,9 @@ def run():
 		    continue
 
 	    print(str(row[0])+ ' : '  + str(count))
-	    dd = removeHtml(str(row[10]))
-	    if (dd.strip()!=''):
-	    	r = zhp(dd)
+	    text = removeHtml(str(row[10]))
+	    if (text.strip()!=''):
+	    	r = zhp(text)
 	    	if(r is not None and r.text.strip() != ''):
 		    	data = eval(r.text)
 		    	if(PROVINCE in data[1] or PROVINCE in data[7]): 
